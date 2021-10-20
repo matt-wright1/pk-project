@@ -1,17 +1,20 @@
-#
-# Solution class
-#
+"""Create the solution class"""
+
 
 class Solution:
-    """A Pharmokinetic (PK) model solution
+    """Creates the solution class.
 
-    Parameters
-    ----------
+    Default values are empty.
 
-    value: numeric, optional
-        an example paramter
+    :param q1: array of drug quantity in compartment 1
+    :param q2: array of drug quantity in compartment 2
+    :param q0: array of drug quantity in drug compartmen
+    :param qC: array of drug quantity in central compartment
+    :param t: array of time"""
 
-    """
-    def __init__(self, value=44):
-        self.value = value
-
+    def __init__(self, q1=None, q2=None, q0=None, qC=None, t=None):
+        self.q1 = q1
+        self.q2 = q2
+        self.q0 = q0
+        self.qC = qC
+        self.t = t
