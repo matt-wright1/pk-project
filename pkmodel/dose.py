@@ -1,8 +1,15 @@
-"""A class that stores the doseage amount and type
+"""Create the Dose class.
 """
 
 class Dose:
-    def __init__(self, c_amount, i_amount, i_times):
+    """Specifies the dosage applied continually at a constant rate
+    and instantaneously at given timestamps.
+    
+    :c_amount: float, dosage applied continually in ng/hr
+    :i_amount: float, dosage applied instantaneously in ng
+    :i_times: float, time(s) in hours at which dosage is applied instantaneously
+    """
+    def __init__(self, c_amount = 0, i_amount = 0, i_times = [0]):
         self.c_amount = c_amount
         self.i_amount = i_amount
         self.i_times = i_times
