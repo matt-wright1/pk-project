@@ -11,3 +11,4 @@ from .version_info import VERSION_INT, VERSION  # noqa
 from .model import Model    # noqa    
 from .compartments import compartments # noqa
 from .solution import Solution     # noqa
+from .dose import Dose
