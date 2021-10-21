@@ -7,8 +7,13 @@ of Parmokinetic (PK) models
 # Import version info
 from .version_info import VERSION_INT, VERSION  # noqa
 
-# Import main classes
-from .model import Model    # noqa    
-from .compartments import Compartments, Central,Peripheral, Dosing # noqa
-from .solution import Solution     # noqa
-from .dose import Dose
+# Import main classes and functions
+from .compartments import *
+from .createmodel import *
+from .dose import *
+from .inputs import *
+from .model import *
+from .plot import *
+from .solution import *
+from .solver import *
+
