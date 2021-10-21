@@ -2,7 +2,7 @@
 # Compartments class
 #
 
-class Compartment:
+class compartments:
     '''Pharmokinetic compartments, used to model the body.
 
     Parameters
@@ -23,7 +23,7 @@ class Compartment:
     @property
     def _q(self):
         return self.q
-class Central(Compartment):
+class Central(compartments):
     '''Central compartment to which the drug is typically administered and from which the drug is removed.
 
     Parameters
@@ -38,7 +38,7 @@ class Central(Compartment):
     @property
     def _clearance(self):
         return self.CL
-class Peripheral(Compartment):
+class Peripheral(compartments):
     '''Periheral compartments to which the drug can be distributed to/from the central compartment.
 
     Parameters
@@ -53,7 +53,7 @@ class Peripheral(Compartment):
     @property
     def _flux(self):
         return self.Q
-class Dosing(Compartment):
+class Dosing(compartments):
     '''Additional compartment from which the drug is absorbed to the central compartment.
     Used for subcutaneous dosing.
 
