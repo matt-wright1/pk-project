@@ -13,12 +13,35 @@ Here you will find the documentation for the modules within the Pharmokinetic Mo
    :maxdepth: 2
    :caption: Contents:
 
-.. automodule:: pkmodel
+.. automodule:: compartments
+  :members:
+  
+.. automodule:: createmodel
   :members:
 
+.. automodule:: dose
+  :members:
 
+.. automodule:: inputs
+  :members:
 
-
+.. automodule:: model
+  :members:
+  
+.. automodule:: pk_main
+  :members:
+  
+.. automodule:: plot
+  :members:
+  
+.. automodule:: solution
+  :members:
+  
+.. automodule:: solver
+  :members:
+  
+.. automodule:: version_info
+  :members:
 
 Indices and tables
 ==================
