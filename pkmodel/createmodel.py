@@ -6,23 +6,18 @@ solution_1 contains a time array for plotting the solution
 solution_2 contains a time array for plotting the solution
 """
 
-#this needs to go in main
-
-#choose initial file for inputs
-from inputs import *
-
 #import classes
 from dose import *
 from compartments import *
 from solution import *
 from model import *
 
-def create_model():
+def create_model(number_of_models, model_1_inputs, model_2_inputs = None):
 
     #setup model 1
     model_1 = Model()
 
-    dose_m1 = Dose(c_amount=m1_continous_dose_amount, i_amount=m1_instantaneous_dose_amount, i_times=m1_dose_times)
+    dose_m1 = Dose(c_amount=model_1_inputs["m1_continous_dose_amount"], i_amount=model_1_inputs["m1_instantaneous_dose_amount"], i_times=model_1_inputs["m1_dose_times"])
     model_1.dose = dose_m1
     if dose_m1.c_amount == 0:
         model_1.dose_type = 'i'
@@ -31,17 +26,17 @@ def create_model():
     else:
         model_1.dose_type = 'b'
 
-    if m1_dose_entry == 'subcutaneous':
-        dose_compartment_m1 = Dosing(v = 0, q = m1_q_0_initial, ka = m1_k_a)
+    if model_1_inputs["m1_dose_entry"] == 'subcutaneous':
+        dose_compartment_m1 = Dosing(v = 0, q = model_1_inputs["m1_q_0_initial"], ka = model_1_inputs["m1_k_a"])
         model_1.compartments.append(dose_compartment_m1)
 
-    central_compartment_m1 = Central(v=m1_volume_c, q=m1_q_c_initial, CL=m1_CL)
+    central_compartment_m1 = Central(v=model_1_inputs["m1_volume_c"], q=model_1_inputs["m1_q_c_initial"], CL=model_1_inputs["m1_CL"])
     model_1.compartments.append(central_compartment_m1)
 
-    peripheral_compartment_m1_1 = Peripheral(v=m1_volume_1, q=m1_q_1_initial, Q=m1_flux_1)
+    peripheral_compartment_m1_1 = Peripheral(v=model_1_inputs["m1_volume_1"], q=model_1_inputs["m1_q_1_initial"], Q=model_1_inputs["m1_flux_1"])
     model_1.compartments.append(peripheral_compartment_m1_1)
 
-    solution_m1 = Solution(t = m1_time)
+    solution_m1 = Solution(t = model_1_inputs["m1_time"])
 
     if m1_number_of_compartments==2:
         peripheral_compartment_m1_2 = Peripheral(v=m1_volume_2, q=m1_q_2_initial, Q=m1_flux_2)
@@ -78,6 +73,9 @@ def create_model():
             model_2.compartments.append(peripheral_compartment_m2_2)
         
         model_2.num_compartments = len(model_2.compartments)
-    
-    return model_1, model_2, solution_m1, solution_m2
+
+        return model_1, model_2, solution_m1, solution_m2
+    else:
+        return model_1, solution_m1
+
 
