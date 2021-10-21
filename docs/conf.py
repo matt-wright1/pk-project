@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Pharmokinetic Model'
-copyright = '2021, NERC DTP Software Engineering Group'
-author = 'NERC DTP Software Engineering Group'
+copyright = '2021, NERC-DTP-Students'
+author = 'NERC-DTP-Students'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1.0'
@@ -30,7 +30,7 @@ release = '0.1.0'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc'
+extensions = ['sphinx_automodapi.automodapi'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
