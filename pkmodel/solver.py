@@ -57,13 +57,11 @@ solve('Model1')
 
 
 
+#setup model 1
+model_1 = Model()
 
-
-    #setup model 1
-    model_1 = Model()
-
-    dose_m1 = Dose(c_amount=m1_continous_dose_amount, i_amount=m1_instantaneous_dose_amount, i_times=m1_dose_times)
-    model_1.dose = dose_m1
+dose_m1 = Dose(c_amount=m1_continous_dose_amount, i_amount=m1_instantaneous_dose_amount, i_times=m1_dose_times)
+model_1.dose = dose_m1
     if dose_m1.c_amount == 0:
         model_1.dose_type = 'i'
     elif dose_m1.i_amount == 0:
