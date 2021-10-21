@@ -1,4 +1,3 @@
-'''
 import unittest
 
 from pkmodel import Dose
@@ -12,25 +11,27 @@ class DoseTest(unittest.TestCase):
         Tests dose class has correct default values of 0.
         """
         TestDose = Dose()
-        self.assertEqual([TestDose.c_amount, TestDose.i_amount, TestDose.i_times], [0, 0, 0])
+        self.assertEqual([TestDose.c_amount, TestDose.i_amount, TestDose.i_times], [0, 0, [0]])
 
     def test_dose_positives(self):
         """
         Tests dose class works with positive integers.
         """
         TestDose = Dose(7,10,5)
-        self.assertEqual([TestDose.c_amount, TestDose.i_amount, TestDose.i_times], [7, 10, 5])
+        self.assertEqual([TestDose.c_amount, TestDose.i_amount, TestDose.i_times], [7, 10, [5]])
 
     def test_dose_negatives(self):
         """
         Tests dose class raises errors with negative integers.
         """
-        TestDose = Dose(-1, 0, 0)
-        self.assertEqual([TestDose.c_amount, TestDose.i_amount, TestDose.i_times], [ValueError, 0, 0])
-        TestDose = Dose(0, 0, -5)
-        self.assertEqual([TestDose.c_amount, TestDose.i_amount, TestDose.i_times], [0, 0, ValueError])
-        estDose = Dose(0, 0, [-5,0,1])
-        self.assertEqual([TestDose.c_amount, TestDose.i_amount, TestDose.i_times], [0, 0, ValueError])
+        with self.assertRaises(ValueError):
+            TestDose = Dose(-1, 0, [0])
+        
+        with self.assertRaises(ValueError):
+            TestDose = Dose(0, 0, -5)
+        
+        with self.assertRaises(ValueError):
+            TestDose = Dose(0, 0, [-5, 0 ,1])
 
 
     def test_dose_add_time(self):
@@ -43,4 +44,3 @@ class DoseTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-'''
