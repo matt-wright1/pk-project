@@ -1,3 +1,4 @@
+'''
 import unittest
 
 from pkmodel import Dose
@@ -42,3 +43,4 @@ class DoseTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+'''
