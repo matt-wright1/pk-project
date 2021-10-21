@@ -5,19 +5,18 @@
 
 Welcome to Pharmokinetic Model's documentation!
 ===============================================
+Here you will find the documentation for the modules within the Pharmokinetic Model package. 
+---
 
 .. toctree::
+   :titlesonly: 
    :maxdepth: 2
    :caption: Contents:
 
-..automodule:: compartments
+.. automodule:: pkmodel
   :members:
 
-..automodule:: dose
-  :members:
 
-..automodule:: solution
-  :members:
 
 
 
