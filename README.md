@@ -1,4 +1,5 @@
-[![CI](https://github.com/NERC-DTP-Students/pk-project/actions/workflows/test-ci.yml/badge.svg)](https://github.com/NERC-DTP-Students/pk-project/actions/workflows/test-ci.yml)
+[![codecov](https://codecov.io/gh/NERC-DTP-Students/pk-project/branch/master/graph/badge.svg?token=BHAWWQXNQP)](https://codecov.io/gh/NERC-DTP-Students/pk-project)
+[![BCH compliance](https://bettercodehub.com/edge/badge/kyubird/pk-project?branch=master)](https://bettercodehub.com/)
 [![Documentation Status](https://readthedocs.org/projects/pharmokinetic-model/badge/?version=latest)](https://pharmokinetic-model.readthedocs.io/en/latest/?badge=latest)
 <div id="top"></div>
 
