@@ -9,7 +9,7 @@ class CompartmentTest(unittest.TestCase):
         """
         Tests compartment values.
         """
-        TestComp = pkmodel.Compartment(1,2)
+        TestComp = pkmodel.Compartments(1,2)
         self.assertEqual(TestComp._volume, 1)
         self.assertEqual(TestComp._q, 2)
     def test_central(self):

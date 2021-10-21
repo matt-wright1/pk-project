@@ -9,6 +9,6 @@ from .version_info import VERSION_INT, VERSION  # noqa
 
 # Import main classes
 from .model import Model    # noqa    
-from .compartments import compartments # noqa
+from .compartments import Compartments, Central,Peripheral, Dosing # noqa
 from .solution import Solution     # noqa
 from .dose import Dose
