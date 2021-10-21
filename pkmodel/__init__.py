@@ -9,11 +9,11 @@ from .version_info import VERSION_INT, VERSION  # noqa
 
 # Import main classes and functions
 from .compartments import *
-from .createmodel import *
+#from .createmodel import *
 from .dose import *
-from .inputs import *
+#from .inputs import *
 from .model import *
-from .plot import *
+#from .plot import *
 from .solution import *
-from .solver import *
+#from .solver import *
 
