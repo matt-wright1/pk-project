@@ -12,7 +12,7 @@ This documentation details the classes and functions within the Pharmokinetic Mo
    :maxdepth: 2
    :caption: Contents:
 
-.. automodapi:: pkmodel.compartments
+.. automodule:: pkmodel.compartments
    :include-all-objects:
 
 Indices and tables
