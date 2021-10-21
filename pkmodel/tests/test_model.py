@@ -1,6 +1,6 @@
 from typing import Type
 import unittest
-import pkmodel
+from pkmodel import *
 
 class ModelTest(unittest.TestCase):
     """
@@ -10,12 +10,12 @@ class ModelTest(unittest.TestCase):
         """
         Tests model default values.
         """
-        TestModel = pkmodel.Model()
-        self.assertEqual(TestModel, [None,None,None,None,None])
+        TestModel = Model()
+        self.assertEqual([TestModel.num_compartments, TestModel.dose_type, TestModel.compartments, TestModel.doses], [1,'i',[],[]])
 
     def test_model_errors(self):
         with self.assertRaises(TypeError):
-            TestModel = Model(1,'hi',[],[])
+            TestModel = Model(1,'wrong string',[],[])
 
         with self.assertRaises(TypeError):
             TestModel = Model('wrong type','i',[],[])
