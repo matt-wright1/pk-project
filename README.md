@@ -66,7 +66,7 @@ The Pharmokinetics model provides a quantitative basis for describing
 This package solves a pharmokinetic model to calculate drug quantities in a central and peripheral compartments as a function of time based on a given dosing strategy. The package outputs either a figure with a single plot displaying drug dose in each compartment over time if one model is being examined or two subplots if two models are being compared. All parameters in the system are fully adjustable. 
 
 ### Model schematic
-[! Example schematic of model!]('pk2.svg')
+[! Example schematic of model!](pk2.svg)
 Basic schematic of the PK model shown here with one peripheral compartment. More detail on this model can be found <a href='https://sabs-r3.github.io/software-engineering-projects/01-introduction/index.html'>here</a>. 
 
 Image credit: <a href='https://github.com/SABS-R3/software-engineering-projects'> Martin Robins SABS-R3, Software Engineering Projects </a> 
