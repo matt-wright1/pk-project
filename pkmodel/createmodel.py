@@ -9,7 +9,7 @@ solution_2 contains a time array for plotting the solution
 #this needs to go in main
 
 #choose initial file for inputs
-from default_inputs import *
+from inputs import *
 
 #import classes
 from dose import *
