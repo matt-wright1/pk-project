@@ -17,8 +17,3 @@ from .plot import *
 from .solution import *
 from .solver import *
 
-
-
-#from .model import Model    # noqa
-#from .protocol import Protocol    # noqa
-#from .solution import Solution     # noqa

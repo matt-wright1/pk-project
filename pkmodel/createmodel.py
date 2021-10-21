@@ -14,7 +14,7 @@ from default_inputs import *
 #import classes
 from dose import *
 from compartments import *
-from Solution import *
+from solution import *
 from model import *
 
 def create_model():

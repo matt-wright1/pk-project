@@ -1,0 +1,4 @@
+[run]
+source = pkmodel
+omit =
+    ci_course/tests/*
