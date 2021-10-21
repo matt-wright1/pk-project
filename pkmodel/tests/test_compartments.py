@@ -1,5 +1,5 @@
 import unittest
-import compartments as cp
+import pkmodel
 
 class CompartmentTest(unittest.TestCase):
     """
@@ -9,14 +9,14 @@ class CompartmentTest(unittest.TestCase):
         """
         Tests compartment values.
         """
-        TestComp = cp.Compartment(1,2)
+        TestComp = pkmodel.Compartment(1,2)
         self.assertEqual(TestComp._volume, 1)
         self.assertEqual(TestComp._q, 2)
     def test_central(self):
         """
         Tests central compartment values.
         """
-        TestComp = cp.Central(1,2,3)
+        TestComp = pkmodel.Central(1,2,3)
         self.assertEqual(TestComp._volume, 1)
         self.assertEqual(TestComp._q, 2)
         self.assertEqual(TestComp._clearance, 3)
