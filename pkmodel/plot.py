@@ -1,6 +1,6 @@
 """Define functions that are used to plot different graphs of the solutions to the PK problem.
 """
-from solver import solve
+from pkmodel import *
 import matplotlib.pyplot as plt
 
 def single_plot(model):

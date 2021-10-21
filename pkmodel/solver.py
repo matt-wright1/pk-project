@@ -15,7 +15,7 @@ import matplotlib.pylab as plt
 #from dose import *
 #from compartments import *
 #from solution import *
-from model import *
+from pkmodel import *
 
 def dose(t, X):
     return X
@@ -53,12 +53,12 @@ def solve(model):
 t_eval = np.linspace(0, 1, 1000)
 y0 = np.array([0.0, 0.0])
 
-solve('Model1')
+#solve('Model1')
 
 
 
 
-
+def placeholder():
     #setup model 1
     model_1 = Model()
 
