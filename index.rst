@@ -10,14 +10,10 @@ Welcome to Pharmokinetic Model's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-..automodule:: compartments
+.. automodule:: pkmodel
   :members:
 
-..automodule:: dose
-  :members:
 
-..automodule:: solution
-  :members:
 
 
 
