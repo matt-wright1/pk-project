@@ -13,8 +13,14 @@ class Compartments:
         inital quantity of drug, units ng
     '''
     def __init__(self, v, q):
-        self.v = v
-        self.q = q
+        self.v = self._is_data_valid(v)
+        self.q = self._is_data_valid(q)
+
+    def _is_data_valid(self, value):
+        if value < 0:
+            raise ValueError("Entry cannot be negative")
+        
+        return value
     
     @property
     def _volume(self):
