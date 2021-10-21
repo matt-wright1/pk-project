@@ -10,6 +10,15 @@ Welcome to Pharmokinetic Model's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+..automodule:: compartments
+  :members:
+
+..automodule:: dose
+  :members:
+
+..automodule:: solution
+  :members:
+
 
 
 Indices and tables
