@@ -12,9 +12,13 @@ class Dose:
     def __init__(self, c_amount = 0, i_amount = 0, i_times = [0]):
         self.c_amount = self._is_data_valid(c_amount)
         self.i_amount = self._is_data_valid(i_amount)
-        if type(i_times) == 'list':
+        print(i_times)
+        print(type(i_times))
+        if type(i_times) == list:
+            print('list branch')
             self.i_times = self._are_times_valid(i_times)
         else:
+            print('int branch')
             self.i_times = [self._is_data_valid(i_times)]
 
     def _is_data_valid(self, value):
@@ -24,7 +28,7 @@ class Dose:
         return value
 
     def _are_times_valid(self, list):
-        for i in range(list):
+        for i in range(len(list)):
             if list[i] < 0:
                 raise ValueError("Entry cannot be negative")
         
