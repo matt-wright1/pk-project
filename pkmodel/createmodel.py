@@ -14,10 +14,7 @@ Outputs:
 """
 
 #import classes
-from dose import *
-from compartments import *
-from solution import *
-from model import *
+from pkmodel import *
 
 def create_model(number_of_models, model_1_inputs, model_2_inputs=None):
 
