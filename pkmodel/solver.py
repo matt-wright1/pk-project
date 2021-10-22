@@ -9,8 +9,8 @@ Outputs:
 
 """
 #import packages
-#import os
-#os.chdir('pkmodel/')
+import os
+os.chdir('pkmodel/')
 #os.getcwd()
 import numpy as np
 import scipy.integrate
@@ -46,6 +46,9 @@ def create_dose_array(model):
 
     return dose_array[:]
 
+def dose(t, X):
+    return X
+
 def rhs(t, y, protocol, Q_p1, Q_p2, V_c, V_p1, V_p2, CL, X, k_a):
     q_0, q_c, q_p1, q_p2 = y
     if protocol == 'intravenous':
@@ -61,7 +64,24 @@ def rhs(t, y, protocol, Q_p1, Q_p2, V_c, V_p1, V_p2, CL, X, k_a):
     return [dq0_dt, dqc_dt, dqp1_dt, dqp2_dt]
 
 
-def solve(model_args):
+def solve(model, solution):
+    t_eval = np.arange(0, (model.time + model.timestep), model.timestep)
+    y0 = np.array([model.compartments['dose'].q,
+                   model.compartments['central'].q,
+                   model.compartments['peripheral_1'].q,
+                   model.compartments['peripheral_2'].q,])
+
+    model_args = {
+        'protocol': 'subcutaneous',
+        'Q_p1': model.compartments['peripheral_1'].Q,
+        'Q_p2': model.compartments['peripheral_2'].Q,
+        'V_c': model.compartments['central'].v,
+        'V_p1': model.compartments['peripheral_1'].v,
+        'V_p2': model.compartments['peripheral_2'].v,#this term must always be non-zero
+        'CL': model.compartments['central'].CL,
+        'X': 1.0,
+        'k_a': model.compartments['dose'].ka}
+
     for model in [model_args]:
         args = [
             model['protocol'],
@@ -72,34 +92,26 @@ def solve(model_args):
             model['V_p2'],
             model['CL'],
             model['X'],
-            model['k_a'],]
+            model['k_a']]
         sol = scipy.integrate.solve_ivp(
             fun=lambda t, y: rhs(t, y, *args),
             t_span=[t_eval[0], t_eval[-1]],
             y0=y0, t_eval=t_eval)
 
-        return sol
+    solution.t = sol.t
+    solution.q0 = sol.y[0, :]
+    solution.qC = sol.y[1, :]
+    solution.q1 = sol.y[2, :]
+    solution.q2 = sol.y[3, :]
+
+    return solution
 
 
 ###main test
 #protocol = 'intravenous'
 #protocol = 'subcutaneous'
-t_eval = np.linspace(0, 1, 1000)
 
-y0 = np.array([0.0, 0.0, 0.0, 0.0])
-
-model_args = {
-    'protocol': 'subcutaneous',
-    'Q_p1': 1.0,
-    'Q_p2': 0.0,
-    'V_c': 1.0,
-    'V_p1': 1.0,
-    'V_p2':1.0,#this term must always be non-zero
-    'CL': 1.0,
-    'X': 1.0,
-    'k_a': 1.0}
-sol = solve(model_args)
-
+'''
 plt.plot(sol.t, sol.y[0, :], label='- q_0')
 plt.plot(sol.t, sol.y[1, :], label='- q_c')
 plt.plot(sol.t, sol.y[2, :], label='- q_p1')
@@ -108,11 +120,7 @@ plt.legend()
 plt.ylabel('drug mass [ng]')
 plt.xlabel('time [h]')
 plt.show()
+'''
 
-#solution_m1.t = sol.t
-#solution_m1.q0 = sol.y[0, :]
-#solution_m1.qC = sol.y[1, :]
-#solution_m1.q1 = sol.y[2, :]
-#solution_m1.q2 = sol.y[3, :]
 
 

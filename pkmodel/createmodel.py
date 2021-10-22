@@ -18,6 +18,7 @@ Outputs:
 from .model import Model
 from .dose import Dose
 from .solution import Solution
+from .compartments import Compartments, Central, Peripheral, Dosing
 
 def create_model(number_of_models, model_1_inputs, model_2_inputs=None):
 
@@ -42,24 +43,25 @@ def create_model(number_of_models, model_1_inputs, model_2_inputs=None):
 
     #create a dose comparment if the dose type is subcutaneous
     if model_1_inputs["m1_dose_entry"] == 'subcutaneous':
-        dose_compartment_m1 = Dosing(v=0,
+        dose_compartment_m1 = Dosing(v=1,
                                      q=model_1_inputs["m1_q_0_initial"],
                                      ka=model_1_inputs["m1_k_a"])
-        model_1.compartments.append(dose_compartment_m1)
+        model_1.compartments['dose']=dose_compartment_m1
 
     #add information about the central compartment to the model class
     central_compartment_m1 = Central(v=model_1_inputs["m1_volume_c"],
                                      q=model_1_inputs["m1_q_c_initial"],
                                      CL=model_1_inputs["m1_CL"])
-    model_1.compartments.append(central_compartment_m1)
+    model_1.compartments['central']=central_compartment_m1
 
     #add information about the peripheral compartment to the model class
     peripheral_compartment_m1_1 = Peripheral(v=model_1_inputs["m1_volume_1"],
                                              q=model_1_inputs["m1_q_1_initial"],
                                              Q=model_1_inputs["m1_flux_1"])
-    model_1.compartments.append(peripheral_compartment_m1_1)
+    model_1.compartments['peripheral_1']=peripheral_compartment_m1_1
 
     model_1.time = model_1_inputs["m1_time"]
+    model_1.timestep = model_1_inputs["m1_timestep"]
 
     #add up a time array into the solution class
     solution_m1 = Solution(t=model_1_inputs["m1_time"])
@@ -69,7 +71,7 @@ def create_model(number_of_models, model_1_inputs, model_2_inputs=None):
         peripheral_compartment_m1_2 = Peripheral(v=model_1_inputs["m1_volume_2"],
                                                  q=model_1_inputs["m1_q_2_initial"],
                                                  Q=model_1_inputs["m1_flux_2"])
-        model_1.compartments.append(peripheral_compartment_m1_2)
+        model_1.compartments['peripheral_2']=peripheral_compartment_m1_2
 
     model_1.num_compartments = len(model_1.compartments)
 
@@ -95,24 +97,25 @@ def create_model(number_of_models, model_1_inputs, model_2_inputs=None):
 
         #create a dose comparment if the dose type is subcutaneous
         if model_2_inputs["m2_dose_entry"] == 'subcutaneous':
-            dose_compartment_m2 = Dosing(v=0,
+            dose_compartment_m2 = Dosing(v=1,
                                         q=model_2_inputs["m2_q_0_initial"],
                                         ka=model_2_inputs["m2_k_a"])
-            model_2.compartments.append(dose_compartment_m2)
+            model_2.compartments['dose']=dose_compartment_m2
 
         #add information about the central compartment to the model class
         central_compartment_m2 = Central(v=model_2_inputs["m2_volume_c"],
                                         q=model_2_inputs["m2_q_c_initial"],
                                         CL=model_2_inputs["m2_CL"])
-        model_2.compartments.append(central_compartment_m2)
+        model_2.compartments['central']=central_compartment_m2
 
         #add information about the peripheral compartment to the model class
         peripheral_compartment_m2_1 = Peripheral(v=model_2_inputs["m2_volume_1"],
                                                 q=model_2_inputs["m2_q_1_initial"],
                                                 Q=model_2_inputs["m2_flux_1"])
-        model_2.compartments.append(peripheral_compartment_m2_1)
+        model_2.compartments['peripheral_1']=peripheral_compartment_m2_1
 
         model_2.time = model_2_inputs["m2_time"]
+        model_2.timestep = model_2_inputs["m2_timestep"]
 
         #add up a time array into the solution class
         solution_m2 = Solution(t=model_2_inputs["m2_time"])
@@ -122,7 +125,7 @@ def create_model(number_of_models, model_1_inputs, model_2_inputs=None):
             peripheral_compartment_m2_2 = Peripheral(v=model_2_inputs["m2_volume_2"],
                                                     q=model_2_inputs["m2_q_2_initial"],
                                                     Q=model_2_inputs["m2_flux_2"])
-            model_2.compartments.append(peripheral_compartment_m2_2)
+            model_2.compartments['peripheral_2']=peripheral_compartment_m2_2
 
         model_2.num_compartments = len(model_2.compartments)
 

@@ -22,8 +22,8 @@ class Compartments:
     
         return value
     def _is_volume_valid(self, value):
-        if value <= 0:
-            raise ValueError("Volume must be greater than 0")
+        if value < 0:
+            raise ValueError("Volume must be positive")
         
         return value
 class Central(Compartments):
