@@ -35,5 +35,5 @@ class Model:
             raise TypeError('The dose type must be i, c or both')
 
     def __str__(self):
-        return 'This model has {self.num_compartments} peripherial compartments with a dose type of {self.dose_type}'
+        return f'This model has {self.num_compartments} peripheral compartment(s) with a dose type of {self.dose_type}'
 
