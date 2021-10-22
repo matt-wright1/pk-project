@@ -31,7 +31,7 @@ def create_model(number_of_models, model_1_inputs, model_2_inputs=None):
                    i_times=model_1_inputs["m1_dose_times"])
 
     #add the dose information to the model
-    model_1.dose = dose_m1
+    model_1.dose = dose_m1 
 
     #set the type of dosing
     if dose_m1.c_amount == 0:

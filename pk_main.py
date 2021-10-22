@@ -21,7 +21,7 @@ if number_of_models == 2:
     sol1 = solve(model1, solution1)
     sol2 = solve(model2, solution2)
     double_plot(sol1, sol2)
-else:
+else: 
     check_inputs(1, model_1_inputs)
     model1, solution1 = create_model(1, model_1_inputs)
     sol = solve(model1, solution1)

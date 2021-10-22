@@ -63,7 +63,7 @@ def rhs(t, y, protocol, Q_p1, Q_p2, V_c, V_p1, V_p2, CL, X, k_a):
     dqc_dt = ka_q0 - q_c / V_c * CL - transition1 - transition2
     dqp1_dt = transition1
     dqp2_dt = transition2
-    return [dq0_dt, dqc_dt, dqp1_dt, dqp2_dt]
+    return [dq0_dt, dqc_dt, dqp1_dt, dqp2_dt] 
 
 
 def solve(model, solution):

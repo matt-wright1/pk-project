@@ -11,7 +11,7 @@ def single_plot(solution):
     """Define a function which makes a single plot of the solution
     as a function of time.
 
-    :param model: model object
+    :param model: model object 
     """
 
     fig = plt.figure()
