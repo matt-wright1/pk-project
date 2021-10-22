@@ -10,7 +10,7 @@ class SolutionTest(unittest.TestCase):
         Tests solution default values.
         """
         TestSol = pkmodel.Solution()
-        self.assertEqual(TestSol, [None,None,None,None,None])
+        self.assertEqual([TestSol.q1, TestSol.q2, TestSol.q0, TestSol.qC, TestSol.t], [None,None,None,None,None])
 
 if __name__ == '__main__':
     unittest.main()

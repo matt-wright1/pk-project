@@ -8,16 +8,16 @@ Inputs:
 
 Outputs:
     model_1 is all the informaiton for model_1
-    model_1 is all the informaiton for model_1
+    model_2 is all the informaiton for model_2
     solution_1 contains a time array for plotting the solution
     solution_2 contains a time array for plotting the solution
 """
 
 #import classes
-from pkmodel import *
+
 
 def create_model(number_of_models, model_1_inputs, model_2_inputs=None):
-
+    from pkmodel import *
     #setup model 1
     model_1 = Model()
 
@@ -55,6 +55,8 @@ def create_model(number_of_models, model_1_inputs, model_2_inputs=None):
                                              q=model_1_inputs["m1_q_1_initial"],
                                              Q=model_1_inputs["m1_flux_1"])
     model_1.compartments.append(peripheral_compartment_m1_1)
+
+    model_1.time = model_1_inputs["m1_time"]
 
     #add up a time array into the solution class
     solution_m1 = Solution(t=model_1_inputs["m1_time"])
@@ -106,6 +108,8 @@ def create_model(number_of_models, model_1_inputs, model_2_inputs=None):
                                                 q=model_2_inputs["m2_q_1_initial"],
                                                 Q=model_2_inputs["m2_flux_1"])
         model_2.compartments.append(peripheral_compartment_m2_1)
+
+        model_2.time = model_2_inputs["m2_time"]
 
         #add up a time array into the solution class
         solution_m2 = Solution(t=model_2_inputs["m2_time"])

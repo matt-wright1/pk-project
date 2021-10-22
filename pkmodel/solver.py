@@ -17,9 +17,33 @@ from model import *
 #from pkmodel import *
 
 
+
 def dose(t, X):
     return X
 
+def create_dose_array(model):
+    """
+    Function to calculate the dose as a time array based on the inputs to the model.
+    """
+    #assign variables to information from the model
+    time = model.time
+    timestep = model.time[1] - model.time[0] #assuming constant timestep
+    dose_c_amount = timestep * model.dose(c_amount)
+    dose_i_amount = model.dose(i_amount)
+    dose_i_times = model.dose(i_times)
+
+    # define empty array with same number of rows as number of time steps and 2 columns
+    dose_array = np.zeros((len(time)))
+    #add continuous amount at each value of time
+    dose_array[:] += dose_c_amount
+
+
+    #add instantaneous dose inputs at the specified times
+    for t in dose_i_times:
+        loc = np.where(t == time)
+        dose_array[loc] += dose_i_amount
+
+    return dose_array[:]
 
 def rhs(t, y, protocol, Q_p1, Q_p2, V_c, V_p1, V_p2, CL, X, k_a):
     q_0, q_c, q_p1, q_p2 = y
@@ -60,6 +84,7 @@ def solve(model_args):
 #protocol = 'intravenous'
 #protocol = 'subcutaneous'
 t_eval = np.linspace(0, 1, 1000)
+
 y0 = np.array([0.0, 0.0, 0.0, 0.0])
 
 model_args = {
@@ -87,4 +112,5 @@ plt.show()
 #solution_m1.qC = sol.y[1, :]
 #solution_m1.q1 = sol.y[2, :]
 #solution_m1.q2 = sol.y[3, :]
+
 

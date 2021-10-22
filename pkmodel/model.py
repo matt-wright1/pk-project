@@ -17,13 +17,12 @@ class Model:
     def _is_data_valid(self, value):
         if value < 0:
             raise ValueError("Entry cannot be negative")
-        elif type(value) != int or float:
+        elif type(value) != (int or float):
             raise TypeError('Number of compartments must be a number!')
-        
         return value
 
     def _is_dose_type_valid(self, value):
-        if value == 'i' or 'c' or 'both':
+        if value == 'i' or value == 'c' or value == 'both':
             return value
         else:
             raise TypeError('The dose type must be i, c or both')
