@@ -13,13 +13,13 @@ solution_1 contains a time array for plotting the solution
 solution_2 contains a time array for plotting the solution
 """
 
-
-
+#import classes
+from model import Model
+from dose import Dose
+from solution import Solution
 
 def create_model(number_of_models, model_1_inputs, model_2_inputs=None):
-    #import classes
-    from pkmodel import Dose, Model, Solution
-    
+
     #setup model 1
     model_1 = Model()
 

@@ -1,7 +1,8 @@
 """Define functions that are used to plot different graphs of the solutions to the PK problem.
 """
 
-
+from model import Model
+from solution import Solution
 
 def single_plot(model):
     """Define a function which makes a single plot of the solution

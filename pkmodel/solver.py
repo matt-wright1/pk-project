@@ -7,12 +7,7 @@ import scipy.integrate
 import matplotlib.pylab as plt
 
 #import classes
-from dose import *
-from compartments import *
-from solution import *
-from model import *
-#from pkmodel import *
-
+from model import Model
 
 
 def dose(t, X):
