@@ -145,7 +145,7 @@ To see an example of this please see the <a href='https://pharmokinetic-model.re
 
 This <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/pk_main.py'>pk_main.py</a>  file calls these scripts within the package in the following order to solve the system.
 1. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/input.py'>input.py</a> - imported with chosen parameters for the model
-2. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/check_inputs.py'>create_model.py</a>  - checks that the model inputs make physics sense
+2. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/check_inputs.py'>check_inputs.py</a>  - checks that the model inputs make physics sense
 3. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/createmodel.py'>create_model.py</a>  - sets up the model based on the inputs file
 4. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/solver.py'>solver.py</a> - solves the given model
 5. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/plots.py'>plots.py</a> - plots the output as one or two graphs depending on how many models were initialised
