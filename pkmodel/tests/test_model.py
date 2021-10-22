@@ -11,7 +11,7 @@ class ModelTest(unittest.TestCase):
         Tests model default values.
         """
         TestModel = Model()
-        self.assertEqual([TestModel.num_compartments, TestModel.dose_type, TestModel.dose], [1,'i',[]])
+        self.assertEqual([TestModel.num_compartments, TestModel.dose_type, TestModel.compartments, TestModel.dose], [1,'i',{}, []])
 
     def test_model_errors(self):
         with self.assertRaises(TypeError):

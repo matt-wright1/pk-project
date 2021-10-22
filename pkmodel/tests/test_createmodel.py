@@ -1,3 +1,4 @@
+'''
 import unittest
 from pkmodel import model, number_of_models, model_1_inputs, create_model, model_2_inputs
 
@@ -33,3 +34,4 @@ class CreateModelTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+'''
