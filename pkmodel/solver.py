@@ -1,6 +1,3 @@
-"""Solves ODE for pk model
-"""
-
 #import packages
 #import os
 #os.chdir('pkmodel/')

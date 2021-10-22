@@ -1,7 +1,7 @@
 """Main code to run the whole model"""
 
 #import functions
-from create_model import * #  function to store the initial inputs into classes
+from createmodel import * #  function to store the initial inputs into classes
 
 #import all the initial input values for the model
 from inputs import * # imports a dictionary of all the imputs for the models, and an integer for the number of models
@@ -12,5 +12,5 @@ if number_of_models == 2:
 else:
     model1, solution1 = create_model(1, model_1_inputs)
 
-if __name__ == '__pk_main__'
+if __name__ == '__pk_main__':
     pk_main()
