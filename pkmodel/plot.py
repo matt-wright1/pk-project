@@ -3,6 +3,9 @@
 
 from .model import Model
 from .solution import Solution
+from .dose import Dose
+#from pkmodel import Dose, Model, Solution
+import matplotlib.pyplot as plt
 
 def single_plot(solution):
     """Define a function which makes a single plot of the solution
@@ -10,20 +13,16 @@ def single_plot(solution):
 
     :param model: model object
     """
-    from pkmodel import Dose, Model, Solution
-    import matplotlib.pyplot as plt
-
-    
 
     fig = plt.figure()
     x_values = solution.t[:]
     label=['q1', 'q2', 'q0', 'qc']
     i=0 # created for labelling
     for q_values in [solution.q1, solution.q2, solution.q0, solution.qC]:
-        if q_values.all() == None: return
+        if q_values.all() == 0.0: return
         else:
             plt.plot(x_values, q_values, label = "%s" %label[i])
-        i=+1
+        i = i+1
     #import labels from inputs.py
     from pkmodel.inputs import model_1_inputs
     dose_entry=model_1_inputs["m1_dose_entry"]
@@ -57,11 +56,10 @@ def double_plot(solution1, solution2):
     label=['q1', 'q2', 'q0', 'qc']
     i=0 # created for labelling
     for q in q_values:
-        
-        if q.all() == None: return
+        if q.all() == 0.0: return
         else:
             ax1.plot(x_values, q, label = "%s" %label[i])
-        i=+1
+        i = i+1
     ax1.legend()
     #import labels from inputs.py can change labels in title below
     from pkmodel.inputs import model_1_inputs
@@ -78,10 +76,10 @@ def double_plot(solution1, solution2):
     label=['q1', 'q2', 'q0', 'qc']
     i=0 # created for labelling
     for q_values in [solution2.q1, solution2.q2, solution2.q0, solution2.qC]:
-        if q_values.all() == None: return
+        if q_values.all() == 0.0: return
         else:
             ax2.plot(x_values, q_values, label = "%s" %label[i])
-        i=+1
+        i = i+1
     ax2.legend()
     #import labels from inputs.py can change labels in title below
     from pkmodel.inputs import model_2_inputs

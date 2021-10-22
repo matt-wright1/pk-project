@@ -69,6 +69,7 @@ def rhs(t, y, protocol, Q_p1, Q_p2, V_c, V_p1, V_p2, CL, X, k_a):
 def solve(model, solution):
     t_eval = np.arange(0, (model.time + model.timestep), model.timestep)
     dose_eval = create_dose_array(model,t_eval)
+    print(dose_eval)
     if 'dose' not in model.compartments:
         protocol = 'intravenous'
         q0 = 0

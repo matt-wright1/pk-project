@@ -41,10 +41,10 @@ number_of_models = 2  # number of models to compare
 model_1_inputs = {"m1_time": 1,  #time the first model runs for
                   "m1_timestep": 0.001, #time step for model calculations
 
-                  "m1_continous_dose_amount": 1,  # |Dose| [ng]
+                  "m1_continous_dose_amount": 0,  # |Dose| [ng]
                   "m1_instantaneous_dose_amount": 1,  # |Dose| [ng]
                   "m1_dose_times": [0, 1 / 2, 1],  # (t) in Dose(t) [hours]
-                  "m1_dose_entry": 'intravenous',  # subcutaneous or intravenous bolus
+                  "m1_dose_entry": 'subcutaneous',  # subcutaneous or intravenous bolus
 
                   "m1_number_of_compartments": 2,  # number of peripheral compartments
 
@@ -68,7 +68,7 @@ model_2_inputs = {"m2_time": 1, #time the first model runs for
                   "m2_timestep": 0.001, #time step for model calculations
 
                   "m2_continous_dose_amount": 1, # |Dose| [ng]
-                  "m2_instantaneous_dose_amount": 1, # |Dose| [ng]
+                  "m2_instantaneous_dose_amount": 0, # |Dose| [ng]
                   "m2_dose_times": [0, 1 / 2, 1], #(t) in Dose(t) [hours]
                   "m2_dose_entry": 'subcutaneous', #  subcutaneous or intravenous bolus
 
