@@ -9,7 +9,7 @@ def single_plot(model):
 
     :param model: model object
     """
-
+    
     solution = solve(model)
 
     fig = plt.figure()
@@ -32,6 +32,7 @@ def double_plot(model1, model2):
     :param model2: model object
 
     """
+    
 
     solution1 = solve(model1)
     solution2 = solve(model2)

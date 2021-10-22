@@ -14,10 +14,10 @@ Outputs:
 """
 
 #import classes
-from pkmodel import *
+
 
 def create_model(number_of_models, model_1_inputs, model_2_inputs=None):
-
+    from pkmodel import *
     #setup model 1
     model_1 = Model()
 
