@@ -11,3 +11,6 @@ if number_of_models == 2:
     model1, model2, solution1, solution2 = create_model(2, model_1_inputs, model_2_inputs)
 else:
     model1, solution1 = create_model(1, model_1_inputs)
+
+if __name__ == '__pk_main__'
+    pk_main()

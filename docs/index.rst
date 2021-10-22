@@ -5,15 +5,42 @@
 
 Welcome to Pharmokinetic Model's documentation!
 ===============================================
-This documentation details the classes and functions within the Pharmokinetic Model package.
+This documentation is for the Pharmokinetic Model package.
+See below for quickstart and examples and use the sidebar to explore different classes and functions.
+
+Quickstart
+----------
+----------
+1. Install this package
+   .. code-block:: bash
+
+   pip install add here
+
+2. Edit your system parameters in inputs.py
+3. Run pk_main.py
+
+Examples
+--------
+---------
 
 .. toctree::
-   :titlesonly:
-   :maxdepth: 2
-   :caption: Contents:
+    :hidden:
+   
+    examples
 
-.. automodule:: pkmodel.compartments
-   :include-all-objects:
+The :doc:`examples` section contains two example uses of the package to help you get started.
+
+Exploration
+-----------
+-----------
+
+.. toctree::
+    :hidden:
+   
+    documentation
+
+The :doc:`documentation` section contains the documentation for the classes and functions within the package.
+
 
 Indices and tables
 ==================
