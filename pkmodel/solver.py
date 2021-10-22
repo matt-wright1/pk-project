@@ -1,6 +1,12 @@
 """
 Solves the differential equations for a given model.
 
+Inputs:
+\n model: model parameters, dosage information.
+
+Outputs:
+\n solution: the concentration in each compartment as a function of time
+
 """
 #import packages
 #import os
@@ -13,13 +19,13 @@ import matplotlib.pylab as plt
 #import classes
 from .model import Model
 
-
-def dose(t, X):
-    return X
-
 def create_dose_array(model):
     """
     Function to calculate the dose as a time array based on the inputs to the model.
+
+    :param model: Model object with information on dosage
+
+    Returns an array of the dose to be applied at every timestep.
     """
     #assign variables to information from the model
     time = model.time
@@ -32,7 +38,6 @@ def create_dose_array(model):
     dose_array = np.zeros((len(time)))
     #add continuous amount at each value of time
     dose_array[:] += dose_c_amount
-
 
     #add instantaneous dose inputs at the specified times
     for t in dose_i_times:
