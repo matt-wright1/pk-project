@@ -1,3 +1,7 @@
+"""
+Solves the differential equations for a given model.
+
+"""
 #import packages
 #import os
 #os.chdir('pkmodel/')

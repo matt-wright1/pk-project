@@ -1,16 +1,17 @@
 """Imports values from the file default_inputs.py and creates the models
 
 Inputs:
-number_of_models: number of models to compare as int
-model_1_inputs: Initial model 1 parameters as dictionaries stored in inputs.py
-model_2_inputs: Initial model 2 parameters as dictionaries stored in inputs.py
-Default: None if the user does not want to compare 2 models
+\n number_of_models: number of models to compare as int
+\n model_1_inputs: Initial model 1 parameters as dictionaries stored in inputs.py
+\n model_2_inputs: Initial model 2 parameters as dictionaries stored in inputs.py
+\n Default: None if the user does not want to compare 2 models
 
 Outputs:
-model_1 is all the informaiton for model_1
-model_2 is all the informaiton for model_2
-solution_1 contains a time array for plotting the solution
-solution_2 contains a time array for plotting the solution
+\n model_1 is all the informaiton for model_1
+\n model_2 is all the informaiton for model_2
+\n solution_1 contains a time array for plotting the solution
+\n solution_2 contains a time array for plotting the solution
+
 """
 
 #import classes
