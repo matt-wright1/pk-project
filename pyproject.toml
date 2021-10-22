@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "nerc-pk-project"
+version = "0.1.0"
+description = "Pharmakinetics project for software engineering course."
+authors = ["NERC-DTP-Students, 2021"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.8, <3.10"
+Cycler = "^0.10.0"
+flake8 = "~=4.0.1"
+kiwisolver = "1.3.2"
+matplotlib = "3.4.3"
+mccabe = "0.6.1"
+Pillow = "8.4.0"
+pycodestyle = "2.8.0"
+pyparsing = "2.4.7"
+python-dateutil = "2.8.2"
+six = "1.16.0"
+scipy = "1.7.1"
+numpy = "1.21.2"
+
+[tool.poetry.dev-dependencies]
+pyflakes = "2.4.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
