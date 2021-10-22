@@ -16,10 +16,28 @@ import matplotlib.pylab as plt
 #from pkmodel import *
 
 
-def dose(t, X):
+def create_dose_array(model):
+    """
+    Function to calculate the dose as a time array based on the inputs to the model.
+    """
+    #assign variables to information from the model
+    time = model.time
+    timestep = model.time[1] - model.time[0] #assuming constant timestep
+    dose_c_amount = timestep * model.dose(c_amount)
+    dose_i_amount = model.dose(i_amount)
+    dose_i_times = model.dose(i_times)
 
-    return X
+    # define empty array with same number of rows as number of time steps and 2 columns
+    dose_array = np.zeros((len(time)))
+    #add continuous amount at each value of time
+    dose_array[:] += dose_c_amount
 
+    #add instantaneous dose inputs at the specified times
+    for t in dose_i_times:
+        loc = np.where(t == time)
+        dose_array[loc] += dose_i_amount
+
+    return dose_array[:]
 
 def intravenous(t, y, Q_p1, V_c, V_p1, CL, X):
 
