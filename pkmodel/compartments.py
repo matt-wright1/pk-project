@@ -21,13 +21,17 @@ class Compartments:
             raise ValueError("Entry cannot be negative")
     
         return value
+
     def _is_volume_valid(self, value):
         if value < 0:
             raise ValueError("Volume must be positive")
         
         return value
+
+        
 class Central(Compartments):
     '''Central compartment to which the drug is typically administered and from which the drug is removed.
+
 
     Parameters
     ----------
@@ -43,6 +47,8 @@ class Peripheral(Compartments):
 
     Parameters
     ----------
+
+
     Q: number
         the transition rate between central compartment and peripheral component, units mL/h
     '''
@@ -56,6 +62,8 @@ class Dosing(Compartments):
 
     Parameters
     ----------
+
+
     ka: number
         the absorption quantity for subcutaneous dosing, units mL
     '''

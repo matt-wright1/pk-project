@@ -15,13 +15,18 @@ class ModelTest(unittest.TestCase):
 
     def test_model_errors(self):
         with self.assertRaises(TypeError):
-            TestModel = Model(1,'wrong string',[],[])
+            TestModel = Model(1, 'wrong string',[], [])
 
         with self.assertRaises(TypeError):
-            TestModel = Model('wrong type','i',[],[])
+            TestModel = Model('string', 'i',[], [])
 
         with self.assertRaises(ValueError):
-            TestModel = Model(-2,'c',[],[])
+            TestModel = Model(-2, 'c', [], [])
+    
+    def test_model_string(self):
+        TestModel = Model()
+        self.assertEqual(TestModel.__str__(),'This model has 1 peripheral compartment(s) with a dose type of i')
+
             
 if __name__ == '__main__':
     unittest.main()

@@ -4,7 +4,7 @@
 from .model import Model
 from .solution import Solution
 
-def single_plot(model):
+def single_plot(solution):
     """Define a function which makes a single plot of the solution
     as a function of time.
 
@@ -13,21 +13,30 @@ def single_plot(model):
     from pkmodel import Dose, Model, Solution
     import matplotlib.pyplot as plt
 
-    solution = solve(model)
+    
 
     fig = plt.figure()
     x_values = solution.t[:]
+    label=['q1', 'q2', 'q0', 'qc']
+    i=0 # created for labelling
     for q_values in [solution.q1, solution.q2, solution.q0, solution.qC]:
-        if q == None: return
+        if q_values.all() == None: return
         else:
-            plt.plot(x_values, q_values, label = "")
+            plt.plot(x_values, q_values, label = "%s" %label[i])
+        i=+1
+    #import labels from inputs.py
+    from pkmodel.inputs import model_1_inputs
+    dose_entry=model_1_inputs["m1_dose_entry"]
+    no_comp=model_1_inputs["m1_number_of_compartments"]
+    
 
+    plt.title('Pharmokinetic model: {} peripheral compartments, {} dosing'.format(no_comp,dose_entry))
     plt.legend()
     plt.ylabel('drug mass [ng]')
     plt.xlabel('time [hr]')
     plt.show()
 
-def double_plot(model1, model2):
+def double_plot(solution1, solution2):
     """Define a function which makes a plot comparing the solutions
     of two models as a function of time.
 
@@ -39,24 +48,49 @@ def double_plot(model1, model2):
     from pkmodel import Dose, Model, Solution
     import matplotlib.pyplot as plt
     
-    solution1 = solve(model1)
-    solution2 = solve(model2)
+    
 
-    fig = plt.figure()
-
+    fig = plt.figure(figsize=[20,15],tight_layout=True)
+    ax1=plt.subplot(1,2,1)
     x_values = solution1.t[:]
-    for q_values in [solution1.q1, solution1.q2, solution1.q0, solution1.qC]:
-        if q == None: return
+    q_values=[solution1.q1, solution1.q2, solution1.q0, solution1.qC]
+    label=['q1', 'q2', 'q0', 'qc']
+    i=0 # created for labelling
+    for q in q_values:
+        
+        if q.all() == None: return
         else:
-            plt.plot(x_values, q_values, label = "")
+            ax1.plot(x_values, q, label = "%s" %label[i])
+        i=+1
+    ax1.legend()
+    #import labels from inputs.py can change labels in title below
+    from pkmodel.inputs import model_1_inputs
+    dose_entry=model_1_inputs["m1_dose_entry"]
+    no_comp=model_1_inputs["m1_number_of_compartments"]
 
-    x_values = solution2.t[:]
-    for q_values in [solution2.q1, solution2.q2, solution2.q0, solution2.qC]:
-        if q == None: return
-        else:
-            plt.plot(x_values, q_values, label = "")
-
-    plt.legend()
+    plt.title('Pharmokinetic model: {} peripheral compartments, {} dosing'.format(no_comp,dose_entry))
     plt.ylabel('drug mass [ng]')
     plt.xlabel('time [hr]')
+
+    #create new subplot for second model
+    ax2=plt.subplot(1,2,2)
+    x_values = solution2.t[:]
+    label=['q1', 'q2', 'q0', 'qc']
+    i=0 # created for labelling
+    for q_values in [solution2.q1, solution2.q2, solution2.q0, solution2.qC]:
+        if q_values.all() == None: return
+        else:
+            ax2.plot(x_values, q_values, label = "%s" %label[i])
+        i=+1
+    ax2.legend()
+    #import labels from inputs.py can change labels in title below
+    from pkmodel.inputs import model_2_inputs
+    dose_entry=model_2_inputs["m2_dose_entry"]
+    no_comp=model_2_inputs["m2_number_of_compartments"]
+
+    plt.title('Pharmokinetic model: {} peripheral compartments, {} dosing'.format(no_comp,dose_entry))
+    plt.ylabel('drug mass [ng]')
+    plt.xlabel('time [hr]')
+
+    
     plt.show()

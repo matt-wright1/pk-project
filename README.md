@@ -57,7 +57,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Package
 
-This Python library specifies, solves, and visualise the solution of Pharmokinetics(PK) model. 
+This Python library specifies, solves, and visualise the solution of a Pharmokinetics(PK) model. 
 
 The Pharmokinetics model provides a quantitative basis for describing
 - delivery of a drug to a patient
@@ -87,7 +87,7 @@ Length of time to solve for the amount of drug in each compartment.
 + Clearance (mL/h)
 
 **Peripheral Compartments**
-+ Number of peripheral compartments (0, 1, 2)
++ Number of peripheral compartments (1, 2)
 + Volume (mL)
 + Initial drug amount (ng)
 + Flux to central compartment (mL/h)
@@ -145,9 +145,10 @@ To see an example of this please see the <a href='https://pharmokinetic-model.re
 
 This <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/pk_main.py'>pk_main.py</a>  file calls these scripts within the package in the following order to solve the system.
 1. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/input.py'>input.py</a> - imported with chosen parameters for the model
-2. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/create_model.py'>create_model.py</a>  - sets up the model based on the inputs file
-3. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/solver.py'>solver.py</a> - solves the given model
-4. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/plots.py'>plots.py</a> - plots the output as one or two graphs depending on how many models were initialised
+2. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/check_inputs.py'>create_model.py</a>  - checks that the model inputs make physics sense
+3. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/createmodel.py'>create_model.py</a>  - sets up the model based on the inputs file
+4. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/solver.py'>solver.py</a> - solves the given model
+5. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/plots.py'>plots.py</a> - plots the output as one or two graphs depending on how many models were initialised
 
 
 
