@@ -23,6 +23,8 @@ This an example for a one compartment model with intravenous bolus continuous do
 3. One graph is produced as one model is bein considered
    ..image:: ../pk-model/examples/eg1.png
 
+4. The user must save the graph manually
+
 Example - Compare two models
 -----------------------------
 This a example compares two one compartment models with intravenous bolus and subcutaneous continuous dosing but respectively.
@@ -38,3 +40,5 @@ This a example compares two one compartment models with intravenous bolus and su
 
 3. Two graphs are produced to enable comparison of the models.
    ..image:: ../pkmodel/examples/eg2.png
+
+4. The use must save each of the graphs manually
