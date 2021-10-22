@@ -13,7 +13,7 @@
 <p>
     A multi-compartment pharmokinetic model with adjustable dosing protocols.
     <br />
-    <a href="https://github.com/NERC-DTP-Students/pk-project"><strong>Explore the docs »</strong></a>
+    <a href="https://pharmokinetic-model.readthedocs.io/en/latest/index.html"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     ·
