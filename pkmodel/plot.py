@@ -18,7 +18,7 @@ def single_plot(model):
     fig = plt.figure()
     x_values = solution.t[:]
     for q_values in [solution.q1, solution.q2, solution.q0, solution.qC]:
-        if q == None: return
+        if q_values == None: return
         else:
             plt.plot(x_values, q_values, label = "")
 
@@ -52,7 +52,7 @@ def double_plot(model1, model2):
 
     x_values = solution2.t[:]
     for q_values in [solution2.q1, solution2.q2, solution2.q0, solution2.qC]:
-        if q == None: return
+        if q_values == None: return
         else:
             plt.plot(x_values, q_values, label = "")
 
