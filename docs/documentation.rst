@@ -1,37 +1,57 @@
----------------
----------------
 Documentation
----------------
----------------
+==============
 
 This section gives all the documentation for the classes and functions within the package.
 
 .. toctree::
-   
-.. automodule:: compartments
-   :members:
-   
-
-.. automodule:: createmodel
-    :members:
-  
-   
-.. automodule:: dose
-   :members:
-
+**Inputs**
+---------------
 .. automodule:: inputs
    :members:
 
-.. automodule:: model
-   :members:
+**Classes**
+----------------------
 
-.. automodule:: plot
-    :members:
+**Compartment Class**
+^^^^^^^^^^^^^^^^^^^^^^^   
+.. automodule:: compartments
+   :members:
    
-
-.. automodule:: solution
+**Dose Class**
+^^^^^^^^^^^^^^^^^^^^^^   
+.. automodule:: dose
    :members:
 
+**Model Class**
+^^^^^^^^^^^^^^^^^
+.. automodule:: model
+   :members:  
+   
+**Solution Class**
+^^^^^^^^^^^^^^^^^^^^
+ .. automodule:: solution
+    :members:
+
+**Functions**
+----------------
+
+**createmodel**
+^^^^^^^^^^^^^^^^^^^^^
+.. automodule:: createmodel
+   :members:
+  
+**solver**
+^^^^^^^^^^^^^^^^^^^^
 .. automodule: solver
    :members:
+
+**plot**
+^^^^^^^^^^^^^^^^^^^^^^^^
+.. automodule:: plot
+   :members:
+   
+
+
+
+
    

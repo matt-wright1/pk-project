@@ -1,6 +1,3 @@
-"""Create the Dose class.
-"""
-
 class Dose:
     """Specifies the dosage applied continually at a constant rate
     and instantaneously at given timestamps.
