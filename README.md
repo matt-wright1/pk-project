@@ -158,8 +158,8 @@ This pk.py file calls these scripts within the package in the following order to
 If you would like to contribute to the project, please get in touch with one of the members of the GitHub organisation <a href="https://github.com/NERC-DTP-Students/people">NERC-DTP-Students </a> and ask to be added as a collaborator.
 
 This project and everyone participating is expected to follow a basic Code of Conduct:
-    * Treat all others with respect and dignity.
-    * Offer constructive feedback to others' contributions; never be deameaning or dismissive.
++ Treat all others with respect and dignity.
++ Offer constructive feedback to others' contributions; never be deameaning or dismissive.
 
 Contributors deemed to be in violation of the code of conduct will be removed from the repository.
 
