@@ -14,10 +14,11 @@ Outputs:
 """
 
 #import classes
-
+from model import Model
+from dose import Dose
 
 def create_model(number_of_models, model_1_inputs, model_2_inputs=None):
-    from pkmodel import *
+    #from pkmodel import *
     #setup model 1
     model_1 = Model()
 
