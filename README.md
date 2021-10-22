@@ -13,7 +13,7 @@
 <p>
     A multi-compartment pharmokinetic model with adjustable dosing protocols.
     <br />
-    <a href="https://github.com/NERC-DTP-Students/pk-project"><strong>Explore the docs »</strong></a>
+    <a href="https://pharmokinetic-model.readthedocs.io/en/latest/index.html"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     ·
@@ -53,7 +53,7 @@
 </details>
 
 
----
+
 <!-- ABOUT THE PROJECT -->
 ## About The Package
 
@@ -104,7 +104,7 @@ Length of time to solve for the amount of drug in each compartment.
 
 
 
----
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -125,25 +125,25 @@ _Add a section on how to install the code on Friday_
 <!-- USAGE EXAMPLES -->
 ### Quickstart
 
-The package is set to run with a default set of parameters defined in <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/inputs.py'>inputs.py</a> . To use the model simply define your parameters for the compartments and dosing protocol in this file, then run <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/pk.py'>pk.py</a> to produce your graphs.
+The package is set to run with a default set of parameters defined in <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/inputs.py'>inputs.py</a> . To use the model simply define your parameters for the compartments and dosing protocol in this file, then run <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/pk_main.py'>pk_main.py</a> to produce your graphs.
 
 ### Example
-_Add an example here, based on our defaults_
-
-_For more examples, please refer to the [Documentation](https://pharmokinetic-model.readthedocs.io/en/latest/)_
+An example plot is shown below
+![An example plot!](eg1.png)
+_For details on how this plot was created and more examples, please refer to the [Documentation](https://pharmokinetic-model.readthedocs.io/en/latest/)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
----
+
 
 
 # Package contents
 
-This package contains classes for different aspects of the model including Dose, Compartments, Model (formed of a combination of dose and compartments) and Solution. A series of scripts create objects in these classes and find the solution as outlined in the roadmap below. To alter the model changes only need to be made to the input.py file.
-For full details please see the <a href='https://pharmokinetic-model.readthedocs.io/en/latest/'>documentation</a>. 
+This package contains classes for different aspects of the model including Dose, Compartments, Model (formed of a combination of dose and compartments) and Solution. A series of scripts create objects in these classes and find the solution as outlined in the roadmap below. To alter the model changes only need to be made to the <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/inputs.py'>inputs.py</a>  file.
+To see an example of this please see the <a href='https://pharmokinetic-model.readthedocs.io/en/latest/'>documentation</a>. 
 
 ## Roadmap
 
-This pk.py file calls these scripts within the package in the following order to solve the system.
+This <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/pk_main.py'>pk_main.py</a>  file calls these scripts within the package in the following order to solve the system.
 1. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/input.py'>input.py</a> - imported with chosen parameters for the model
 2. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/create_model.py'>create_model.py</a>  - sets up the model based on the inputs file
 3. <a href='https://github.com/NERC-DTP-Students/pk-project/tree/master/pkmodel/solver.py'>solver.py</a> - solves the given model
@@ -152,7 +152,7 @@ This pk.py file calls these scripts within the package in the following order to
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
----
+
 
 ## Contributing
 
@@ -177,7 +177,7 @@ You can find the style information in the flake8 file in the repository.
 If you have any questions, please contact one of the members of the organisation, as above.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
----
+
 <!-- LICENSE -->
 
 ## License
@@ -186,7 +186,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
----
+
 
 
 <!-- CONTACT -->
@@ -199,7 +199,7 @@ Project Link: [https://github.com/NERC-DTP-Students/pk-project](https://github.c
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
----
+
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
@@ -210,7 +210,7 @@ Project Link: [https://github.com/NERC-DTP-Students/pk-project](https://github.c
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
----
+
 <!-- Bugs -->
 
 ## Issues
