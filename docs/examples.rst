@@ -11,7 +11,7 @@ Example - Single model
 ------------------------
 This an example for a one compartment model with intravenous bolus continuous dosing.
 
-1. Change inputs in inputs.py. Set parameters to zero for compartments you do not want.
+1. Change inputs in inputs.py. Set parameters to zero for compartments you do not want. If number of models (compartments) is set to one all the parameters for model (compartment) 2 will be ignored even if non zero.
 
    .. literalinclude:: ../pkmodel/examples/inputs_e1.py
        :language: python3
