@@ -164,12 +164,12 @@ This project and everyone participating is expected to follow a basic Code of Co
 Contributors deemed to be in violation of the code of conduct will be removed from the repository.
 
 The general workflow for contributing to the project is as follows:
-    * Create an issue on GitHub.
-    * Ensure your local copy of the repository is up to date, and branch the repository with a sensible name beginning with the issue number, e.g. '45-solver-broken'.
-    * Fix the issue, commit your changes to the branch and push to GitHub. Ensure your commit message includes the issue number, e.g. "#45 Fixed Solver file"
-    * Create a pull request for your branch to be merged with the master.
-    * This will be reviewed by another collaborator, and then merged with the master.
-    * The branch should now be deleted.
++ Create an issue on GitHub.
++ Ensure your local copy of the repository is up to date, and branch the repository with a sensible name beginning with the issue number, e.g. '45-solver-broken'.
++ Fix the issue, commit your changes to the branch and push to GitHub. Ensure your commit message includes the issue number, e.g. "#45 Fixed Solver file"
++ Create a pull request for your branch to be merged with the master.
++ This will be reviewed by another collaborator, and then merged with the master.
++ The branch should now be deleted.
 
 You can find the style information in the flake8 file in the repository.
 
