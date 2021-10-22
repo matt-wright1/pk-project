@@ -113,13 +113,7 @@ Full documentation is available on <a href='https://pharmokinetic-model.readthed
 ### Installation
 This package is pip installable and can be installed with the following command  
 
-`pip install `
-
-_Add a section on how to install the code on Friday_
-   
-
-
-
+`pip3 install -i https://test.pypi.org/simple/pkmodel`
 
 
 <!-- USAGE EXAMPLES -->
@@ -216,7 +210,7 @@ Project Link: [https://github.com/NERC-DTP-Students/pk-project](https://github.c
 
 ## Issues
 
-There are currently no reported issues. Please report any you find <a href="https://github.com/NERC-DTP-Students/pk-project/issues">here</a>.
+This project is still in development please see the issues <a href="https://github.com/NERC-DTP-Students/pk-project/issues">here</a>.
 
 
 
