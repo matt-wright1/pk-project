@@ -22,7 +22,7 @@ if number_of_models == 2:
 else:
     check_inputs(1, model_1_inputs)
     model1, solution1 = create_model(1, model_1_inputs)
-    sol = solve(model1, solution1)
+    sol1 = solve(model, solution)
 
 
 if __name__ == '__main__':

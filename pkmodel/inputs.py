@@ -16,7 +16,7 @@ model_1_inputs = {"m1_time": 1,  #time the first model runs for
                   "m1_continous_dose_amount": 1,  # |Dose| [ng]
                   "m1_instantaneous_dose_amount": 1,  # |Dose| [ng]
                   "m1_dose_times": [0, 1 / 2, 1],  # (t) in Dose(t) [hours]
-                  "m1_dose_entry": 'subcutaneous',  # subcutaneous or intravenous bolus
+                  "m1_dose_entry": 'intravenous',  # subcutaneous or intravenous bolus
 
                   "m1_number_of_compartments": 2,  # number of peripheral compartments
 

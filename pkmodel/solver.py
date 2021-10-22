@@ -9,17 +9,16 @@ Outputs:
 
 """
 #import packages
-import os
-os.chdir('pkmodel/')
+#import os
+#os.chdir('pkmodel/')
 #os.getcwd()
 import numpy as np
 import scipy.integrate
-import matplotlib.pylab as plt
 
 #import classes
 from .model import Model
 
-def create_dose_array(model):
+def create_dose_array(model,t_eval):
     """
     Function to calculate the dose as a time array based on the inputs to the model.
 
@@ -28,11 +27,11 @@ def create_dose_array(model):
     Returns an array of the dose to be applied at every timestep.
     """
     #assign variables to information from the model
-    time = model.time
-    timestep = model.time[1] - model.time[0] #assuming constant timestep
-    dose_c_amount = timestep * model.dose(c_amount)
-    dose_i_amount = model.dose(i_amount)
-    dose_i_times = model.dose(i_times)
+    time = t_eval
+    timestep = time[1] - time[0] #assuming constant timestep
+    dose_c_amount = timestep * model.dose.c_amount
+    dose_i_amount = model.dose.i_amount
+    dose_i_times = model.dose.i_times
 
     # define empty array with same number of rows as number of time steps and 2 columns
     dose_array = np.zeros((len(time)))
@@ -50,14 +49,17 @@ def dose(t, X):
     return X
 
 def rhs(t, y, protocol, Q_p1, Q_p2, V_c, V_p1, V_p2, CL, X, k_a):
+    #if min(abs(t-t_eval)) ==0:
+
+    #    print(t)
     q_0, q_c, q_p1, q_p2 = y
     if protocol == 'intravenous':
-        ka_q0 = dose(t, X)
+        ka_q0 = X#dose(t, X)
     else:
         ka_q0 = k_a * q_0
     transition1 = Q_p1 * (q_c / V_c - q_p1 / V_p1)
     transition2 = Q_p2 * (q_c / V_c - q_p2 / V_p2)
-    dq0_dt = dose(t, X) - ka_q0
+    dq0_dt = X - ka_q0 #dose(t, X) - ka_q0
     dqc_dt = ka_q0 - q_c / V_c * CL - transition1 - transition2
     dqp1_dt = transition1
     dqp2_dt = transition2
@@ -66,21 +68,30 @@ def rhs(t, y, protocol, Q_p1, Q_p2, V_c, V_p1, V_p2, CL, X, k_a):
 
 def solve(model, solution):
     t_eval = np.arange(0, (model.time + model.timestep), model.timestep)
-    y0 = np.array([model.compartments['dose'].q,
+    dose_eval = create_dose_array(model,t_eval)
+    if 'dose' not in model.compartments:
+        protocol = 'intravenous'
+        q0 = 0
+        ka = 1
+    else:
+        protocol = 'subcutaneous'
+        q0 = model.compartments['dose'].q
+        ka = model.compartments['dose'].ka
+    y0 = np.array([q0,
                    model.compartments['central'].q,
                    model.compartments['peripheral_1'].q,
                    model.compartments['peripheral_2'].q,])
 
     model_args = {
-        'protocol': 'subcutaneous',
+        'protocol': protocol,
         'Q_p1': model.compartments['peripheral_1'].Q,
         'Q_p2': model.compartments['peripheral_2'].Q,
         'V_c': model.compartments['central'].v,
         'V_p1': model.compartments['peripheral_1'].v,
         'V_p2': model.compartments['peripheral_2'].v,#this term must always be non-zero
         'CL': model.compartments['central'].CL,
-        'X': 1.0,
-        'k_a': model.compartments['dose'].ka}
+        'X': 1.0,#dose_eval,
+        'k_a': ka}
 
     for model in [model_args]:
         args = [
@@ -105,22 +116,4 @@ def solve(model, solution):
     solution.q2 = sol.y[3, :]
 
     return solution
-
-
-###main test
-#protocol = 'intravenous'
-#protocol = 'subcutaneous'
-
-'''
-plt.plot(sol.t, sol.y[0, :], label='- q_0')
-plt.plot(sol.t, sol.y[1, :], label='- q_c')
-plt.plot(sol.t, sol.y[2, :], label='- q_p1')
-plt.plot(sol.t, sol.y[3, :], label='- q_p2')
-plt.legend()
-plt.ylabel('drug mass [ng]')
-plt.xlabel('time [h]')
-plt.show()
-'''
-
-
 
