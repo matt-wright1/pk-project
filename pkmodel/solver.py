@@ -7,7 +7,7 @@ import scipy.integrate
 import matplotlib.pylab as plt
 
 #import classes
-from model import Model
+from .model import Model
 
 
 def dose(t, X):
@@ -84,7 +84,8 @@ model_args = {
     'Q_p1': 1.0,
     'Q_p2': 0.0,
     'V_c': 1.0,
-    'V_p1': 1.0,#this term must always be non-zero
+    'V_p1': 1.0,
+    'V_p2':1.0,#this term must always be non-zero
     'CL': 1.0,
     'X': 1.0,
     'k_a': 1.0}
