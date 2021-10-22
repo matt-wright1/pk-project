@@ -1,11 +1,11 @@
-'''Create the model class'''
+
 class Model:
     """Creates the model class.
 
-    :num_components: number of peripherial compartments
-    :dose_type: either 'c' (continuous), 'i' (instantaneous), or 'both'
-    :self.compartments: list of compartment objects in model
-    :self.doses : list of dose objects in model
+    :parameter:num_components: number of peripherial compartments
+    :parameter:dose_type: either 'c' (continuous), 'i' (instantaneous), or 'both'
+    :parameter:self.compartments: list of compartment objects in model
+    :parameter:self.doses : list of dose objects in model
 
     """
     def __init__(self, num_compartments = 1, dose_type = 'i', compartments = [], doses = []):

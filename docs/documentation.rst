@@ -1,19 +1,16 @@
-----------
-----------
+---------------
+---------------
 Documentation
------------
------------
+---------------
+---------------
 
 This section gives all the documentation for the classes and functions within the package.
 
 .. toctree::
-  
-
-
+   
 .. automodule:: compartments
    :members:
-   :undoc-members:
-   :show-inheritance:
+   
 
 .. automodule:: createmodel
     :members:

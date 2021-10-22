@@ -1,5 +1,6 @@
 """Define functions that are used to plot different graphs of the solutions to the PK problem.
 """
+
 from model import Model
 from solution import Solution
 
@@ -9,7 +10,9 @@ def single_plot(model):
 
     :param model: model object
     """
-    
+    from pkmodel import Dose, Model, Solution
+    import matplotlib.pyplot as plt
+
     solution = solve(model)
 
     fig = plt.figure()
@@ -33,7 +36,9 @@ def double_plot(model1, model2):
 
     """
     
-
+    from pkmodel import Dose, Model, Solution
+    import matplotlib.pyplot as plt
+    
     solution1 = solve(model1)
     solution2 = solve(model2)
 
