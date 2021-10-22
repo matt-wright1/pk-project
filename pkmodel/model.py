@@ -1,6 +1,9 @@
 '''Create the model class
 
 '''
+from numpy import timedelta64
+
+
 class Model:
     """Creates the model class.
 
@@ -10,11 +13,13 @@ class Model:
     :self.doses: list of dose objects in model
 
     """
-    def __init__(self, num_compartments = 1, dose_type = 'i', compartments = [], doses = []):
+    def __init__(self, num_compartments = 1, dose_type = 'i', compartments = {}, dose = [], time = 1, timestep=0.001):
         self.num_compartments = self._is_data_valid(num_compartments)
         self.dose_type = self._is_dose_type_valid(dose_type)
         self.compartments = compartments
-        self.doses = doses
+        self.dose = dose
+        self.time = time
+        self.timestep = timestep
 
     def _is_data_valid(self, value):
         if value < 0:
