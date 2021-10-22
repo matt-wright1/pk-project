@@ -13,7 +13,7 @@ def check_inputs(number_of_models, model_1_inputs, model_2_inputs=None):
 
     # warning if number of models is set to 1 but data for model 2 exists
     if number_of_models == 1 and model_2_inputs is not None:
-        raise ValueError("Warning: model 2 data will not be used. \
+        print("Warning: model 2 data will not be used. \
             To fix set number_of_models = 2.")
 
     # check model 1 data
@@ -29,8 +29,7 @@ def check_inputs(number_of_models, model_1_inputs, model_2_inputs=None):
     # but no dose quantity is given
     if model_1_inputs["m1_instantaneous_dose_amount"] == 0 \
             and model_1_inputs["m1_dose_times"]:
-        raise ValueError("Warning: enter m1_instantenous_dose_amount \
-            or set m1_dose_times to [].")
+        print("Warning: no m1_instantenous_dose_amount entered")
 
     # warnings if compartment volumes are zero or negative
     if model_1_inputs["m1_volume_c"] <= 0:
@@ -48,19 +47,19 @@ def check_inputs(number_of_models, model_1_inputs, model_2_inputs=None):
     # and number of compartments is set to 1
     if model_1_inputs["m1_number_of_compartments"] == 1 \
             and model_1_inputs["m1_volume_2"] != 0:
-        raise ValueError("2nd peripheral compartment won't be included. \
+        print("Warning: 2nd peripheral compartment won't be included. \
             Set m1_number_of_compartments to 2 to include.")
 
     # warning if dosing is set to subcutaneous but ka is 0
     if model_1_inputs["m1_dose_entry"] == 'subcutaneous' \
             and model_1_inputs["m1_k_a"] == 0:
-        raise ValueError("Dosing is set to subcutaneous and ka = 0 \
+        print("Warning: Dosing is set to subcutaneous and ka = 0 \
             so dose won't be absorbed.")
 
     # warning if dosing is not subcutenous but ka is non-zero
     if model_1_inputs["m1_dose_entry"] != 'subcutaneous' \
             and model_1_inputs["m1_k_a"] != 0:
-        raise ValueError("m1_dose_entry not subcutaneous \
+        print("Warning: m1_dose_entry not subcutaneous \
             so dose compartment won't be added.")
 
     # check model 2 data
@@ -76,8 +75,7 @@ def check_inputs(number_of_models, model_1_inputs, model_2_inputs=None):
     # but no dose quantity is given
     if model_2_inputs["m2_instantaneous_dose_amount"] == 0 \
             and model_2_inputs["m2_dose_times"]:
-        raise ValueError("Warning: enter m2_instantenous_dose_amount \
-            or set m2_dose_times to [].")
+        print("Warning: no m2_instantenous_dose_amount entered")
 
     # warnings if compartment volumes are zero or negative
     if model_2_inputs["m2_volume_c"] <= 0:
@@ -95,17 +93,17 @@ def check_inputs(number_of_models, model_1_inputs, model_2_inputs=None):
     # and number of compartments is set to 1
     if model_2_inputs["m2_number_of_compartments"] == 1 \
             and model_2_inputs["m2_volume_2"] != 0:
-        raise ValueError("2nd peripheral compartment won't be included. \
+        print("Warning: 2nd peripheral compartment won't be included. \
             Set m2_number_of_compartments to 2 to include.")
 
     # warning if dosing is set to subcutaneous but ka is 0
     if model_2_inputs["m2_dose_entry"] == 'subcutaneous' \
             and model_2_inputs["m2_k_a"] == 0:
-        raise ValueError("Dosing is set to subcutaneous and ka = 0 \
+        print("Warning: Dosing is set to subcutaneous and ka = 0 \
             so dose won't be absorbed.")
 
     # warning if dosing is not subcutenous but ka is non-zero
     if model_2_inputs["m2_dose_entry"] != 'subcutaneous' \
             and model_2_inputs["m2_k_a"] != 0:
-        raise ValueError("m2_dose_entry not subcutaneous \
+        print("Warning: m2_dose_entry not subcutaneous \
             so dose compartment won't be added.")
